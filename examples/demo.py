@@ -14,6 +14,9 @@ class PicoFontApp(App):
         yield Static(
             PicoFontRenderable(string.digits),
         )
+        yield Static(
+            PicoFontRenderable(" !\"#$%&'()*+,-./"),
+        )
 
 
 if __name__ == "__main__":

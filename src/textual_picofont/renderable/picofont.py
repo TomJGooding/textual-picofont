@@ -3,9 +3,57 @@ from rich.measure import Measurement
 from rich.segment import Segment
 from rich.style import Style, StyleType
 
-CHARACTERS = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+CHARACTERS = " !\"#$%&'()*+,-./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 PICO_CHARACTERS = """\
+   
+
+
+ ▄
+ █
+ ▄
+▄ ▄
+▀ ▀
+
+▄ ▄
+█▀█
+█▀█
+▄▄▄
+▀█▄
+▀█▀
+▄ ▄
+ ▄▀
+█ ▄
+▄▄ 
+██▄
+█▄█
+ ▄
+▀
+
+ ▄
+█ 
+▀▄
+ ▄ 
+  █
+ ▄▀
+▄ ▄
+▄█▄
+▄▀▄
+
+▄█▄
+ ▀
+
+
+▄▀
+
+▄▄▄
+
+
+
+ ▄
+  ▄
+ █ 
+▄▀ 
 ▄▄▄
 █ █
 █▄█
@@ -143,18 +191,18 @@ class PicoFont:
                 row2(" ")
                 row3(character)
             else:
-                row1(PICO_CHARACTERS[position].ljust(3))
-                row2(PICO_CHARACTERS[position + 1].ljust(3))
-                row3(PICO_CHARACTERS[position + 2].ljust(3))
+                row1(PICO_CHARACTERS[position].ljust(4))
+                row2(PICO_CHARACTERS[position + 1].ljust(4))
+                row3(PICO_CHARACTERS[position + 2].ljust(4))
 
         new_line = Segment.line()
         for line in character_pieces:
-            yield Segment(" ".join(line), style)
+            yield Segment("".join(line), style)
             yield new_line
 
     @classmethod
     def get_width(cls, text: str) -> int:
-        width = sum(3 if character in CHARACTERS else 1 for character in text)
+        width = sum(4 if character in CHARACTERS else 1 for character in text)
         return width
 
     def __rich_measure__(
