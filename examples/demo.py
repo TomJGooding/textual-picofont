@@ -11,6 +11,9 @@ class PicoFontApp(App):
         yield Static(
             PicoFontRenderable(string.ascii_uppercase),
         )
+        yield Static(
+            PicoFontRenderable(string.digits),
+        )
 
 
 if __name__ == "__main__":
