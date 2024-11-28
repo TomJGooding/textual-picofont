@@ -18,7 +18,7 @@ class PicoFontApp(App):
             PicoFontRenderable("@" + string.ascii_uppercase[:15]),
         )
         yield Static(
-            PicoFontRenderable(string.ascii_uppercase[15:]),
+            PicoFontRenderable(string.ascii_uppercase[15:] + "[\\]^_"),
         )
 
 

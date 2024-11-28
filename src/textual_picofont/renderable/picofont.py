@@ -3,7 +3,9 @@ from rich.measure import Measurement
 from rich.segment import Segment
 from rich.style import Style, StyleType
 
-CHARACTERS = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+CHARACTERS = (
+    " !\"#$%&'()*+,-./" "0123456789:;<=>?" "@ABCDEFGHIJKLMNO" "PQRSTUVWXYZ[\\]^_"
+)
 
 PICO_CHARACTERS = """\
    
@@ -183,6 +185,21 @@ PICO_CHARACTERS = """\
 ▄▄▄
  ▄▀
 █▄▄
+▄▄
+█ 
+█▄
+▄  
+ █ 
+ ▀▄
+ ▄▄
+  █
+ ▄█
+ ▄ 
+▀ ▀
+
+
+
+▄▄▄
 """.splitlines()
 
 
