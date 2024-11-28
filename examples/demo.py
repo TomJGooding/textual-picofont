@@ -17,6 +17,9 @@ class PicoFontApp(App):
         yield Static(
             PicoFontRenderable(" !\"#$%&'()*+,-./"),
         )
+        yield Static(
+            PicoFontRenderable(":;<=>?@"),
+        )
 
 
 if __name__ == "__main__":
