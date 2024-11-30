@@ -250,7 +250,7 @@ class PicoFont:
 
     @classmethod
     def get_width(cls, text: str) -> int:
-        width = sum(4 if character in CHARACTERS else 1 for character in text)
+        width = sum(4 if character in CHARACTERS else 1 for character in text.upper())
         return width
 
     def __rich_measure__(
