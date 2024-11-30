@@ -6,6 +6,16 @@ from textual_picofont.widget import PicoFont
 
 
 class PicoFontApp(App):
+    CSS = """
+    Screen {
+        align: center middle;
+    }
+
+    PicoFont {
+        width: auto;
+    }
+    """
+
     def compose(self) -> ComposeResult:
         yield PicoFont(" !\"#$%&'()*+,-./")
         yield PicoFont(string.digits + ":;<=>?")
