@@ -1,28 +1,17 @@
 import string
 
 from textual.app import App, ComposeResult
-from textual.widgets import Static
 
-from textual_picofont.renderable import PicoFont as PicoFontRenderable
+from textual_picofont.widget import PicoFont
 
 
 class PicoFontApp(App):
     def compose(self) -> ComposeResult:
-        yield Static(
-            PicoFontRenderable(" !\"#$%&'()*+,-./"),
-        )
-        yield Static(
-            PicoFontRenderable(string.digits + ":;<=>?"),
-        )
-        yield Static(
-            PicoFontRenderable("@" + string.ascii_uppercase[:15]),
-        )
-        yield Static(
-            PicoFontRenderable(string.ascii_uppercase[15:] + "[\\]^_"),
-        )
-        yield Static(
-            PicoFontRenderable("{|}~"),
-        )
+        yield PicoFont(" !\"#$%&'()*+,-./")
+        yield PicoFont(string.digits + ":;<=>?")
+        yield PicoFont("@" + string.ascii_uppercase[:15])
+        yield PicoFont(string.ascii_uppercase[15:] + "[\\]^_")
+        yield PicoFont("{|}~")
 
 
 if __name__ == "__main__":
